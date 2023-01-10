@@ -1,0 +1,26 @@
+<nb-card>
+  <nb-card-body>
+    <div class="row line">
+      <h2 class="mb-3">
+        <nb-icon (click)="back()" class="flex-grow-0 mx-3" icon="arrow-back-outline" style="cursor: pointer"></nb-icon>
+      </h2>
+      <h2>{{selectedTransaction.detailTitle}}</h2>
+    </div>
+
+    <nb-tabset>
+      <nb-tab tabTitle="Detail">
+        <h5 class="my-3">Attributes</h5>
+        <ngx-tree-grid
+          class="gray-text"
+          [show-header]="false"
+          [equalColumnsWidth]="false"
+          [columns]="detailColumns"
+          [data]="detailTableData"
+        ></ngx-tree-grid>
+      </nb-tab>
+      <nb-tab tabTitle="Transaction detail" *ngIf="tabUrl">
+        <div [innerHtml]="polygonTransactionDetailHTML" class="breakWords gray-text"></div>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card-body>
+</nb-card>

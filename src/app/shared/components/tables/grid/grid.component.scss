@@ -1,0 +1,19 @@
+.showHeader th {
+  background-color: black;
+  text-align: inherit;
+  color: white;
+  border-color: black !important;
+  text-transform: capitalize;
+}
+
+.hideHeader th {
+  display: none !important;
+}
+
+td.nb-tree-grid-cell.nb-column-attributeLabel {
+  font-weight: 600 !important;
+}
+
+.no-data{
+  color: #8f9bb3;
+}

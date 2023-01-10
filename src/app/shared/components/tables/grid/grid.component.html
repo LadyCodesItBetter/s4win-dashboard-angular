@@ -1,0 +1,23 @@
+<nb-card>
+  <table
+    [ngClass]="showHeader ? 'showHeader' : 'hideHeader'"
+    [nbTreeGrid]="data"
+    nbSort
+    (sort)="changeSort($event)"
+    column
+  >
+    <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="columns"></tr>
+    <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: columns" (click)="onClick(row)"></tr>
+
+
+    <ng-container *ngFor="let col of columns">
+      <ng-container nbTreeGridColumnDef="{{ col }}">
+        <th nbTreeGridHeaderCell [nbSortHeader]="getDirection(col)" *nbTreeGridHeaderCellDef>{{ col | ngxCapitalize}}</th>
+        <td nbTreeGridCell *nbTreeGridCellDef="let row">
+          {{row.data[col]}}
+        </td>
+      </ng-container>
+    </ng-container>
+  </table>
+  <h5 *ngIf="noData" class="align-self-center no-data p-5">No data</h5>
+</nb-card>

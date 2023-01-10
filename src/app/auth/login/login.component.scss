@@ -1,0 +1,18 @@
+::ng-deep .nb-theme-default nb-card-header path {
+  fill: white;
+}
+
+button.appearance-filled.full-width.size-medium.shape-rectangle.status-primary.nb-transition {
+  --color: #fff;
+  font-size: .75rem;
+  line-height: 1rem;
+  padding: 1.25em 2em;
+  color: #fff;
+  background-color: #B59260;
+  border-color: #B59260;
+}
+
+span.custom-checkbox.checked, .nb-theme-default nb-checkbox.status-basic .custom-checkbox.checked {
+  background-color: #B59260;
+  border-color: #B59260;
+}

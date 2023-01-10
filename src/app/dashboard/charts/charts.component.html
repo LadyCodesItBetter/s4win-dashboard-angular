@@ -1,0 +1,63 @@
+<nb-card>
+  <nb-card-header>Worked assets date range</nb-card-header>
+  <nb-card-body>
+    <ngx-date-filter
+      (dateFromChanged)="onDateFromChanged($event, 'selectedDateFrom')"
+      (dateToChanged)="onDateToChanged($event, 'selectedDateTo')"
+      (noDateSet)="onSetNoDate($event)"
+      (searchStart)="updateWorkedAsset()"
+      [buttonVisible]="searchButtonVisible"
+      [dateFrom]="selectedDateFrom"
+      [dateTo]="selectedDateTo"
+    ></ngx-date-filter>
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <h4 *ngIf="showWorking">Working</h4>
+        <ngx-pie *ngIf="showWorking" [data]="workingChart"></ngx-pie>
+        <div *ngIf="!showWorking" class="d-flex flex-column justify-content-center" style="height: 400px">
+          <b class="text-center" style="color: #8f9bb3;">No working assets yet...</b>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <h4 *ngIf="showWorked">Worked</h4>
+        <ngx-charts-advanced-pie-chart
+          *ngIf="showWorked"
+          style="transform: translateX(-63px);"
+          [results]="workedChart"
+        ></ngx-charts-advanced-pie-chart>
+        <div *ngIf="!showWorked" class="d-flex flex-column justify-content-center" style="height: 400px">
+          <b class="text-center" style="color: #8f9bb3;">No worked assets yet...</b>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
+<nb-card>
+  <nb-card-header>Frames and bikes</nb-card-header>
+  <nb-card-body>
+    <ngx-date-filter
+      (dateFromChanged)="onDateFromChanged($event, 'selectedDateFrom')"
+      (dateToChanged)="onDateToChanged($event, 'selectedDateTo')"
+      (noDateSet)="onSetNoDate($event, 'transaction-histogram')"
+      (searchStart)="updateTransactionsHistogram()"
+      [buttonVisible]="searchButtonVisible"
+      (setSelected)="setSelectedProductType($event)"
+      [selectValues]="productTypes"
+      [dateFrom]="selectedTransactionDateFrom"
+      [dateTo]="selectedTransactionDateTo"
+    ></ngx-date-filter>
+    <div class="row">
+      <div class="col-12 m-auto" style="height: 600px">
+        <ngx-charts-number-card
+          [results]="transactionChartData"
+          [cardColor]="cardColor">
+        </ngx-charts-number-card>
+
+
+<!--        <ngx-bar-grouped [data]="transactionChartData"></ngx-bar-grouped>-->
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+

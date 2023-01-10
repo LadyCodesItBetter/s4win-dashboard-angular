@@ -1,0 +1,32 @@
+.form-inline * {
+  flex: 1;
+}
+
+.form-inline > * {
+  margin: 0 0.3rem 1.5rem 0;
+}
+
+nb-card.inline-form-card nb-card-body {
+  padding-bottom: 0;
+}
+
+nb-datepicker {
+  margin: 0 !important;
+  display: none;
+}
+
+nb-icon {
+  color: #8f9bb3;
+  margin: 0 0.3rem 1.5rem 0 !important;
+  flex-grow: 0.3 !important;
+}
+
+button.appearance-filled.size-medium.shape-rectangle.status-primary.nb-transition,.toggle.ng-tns-c250-0.checked{
+  background-color: black;
+  border-color: black;
+  color: #ffffff;
+}
+
+.nb-theme-default nb-toggle.status-basic .toggle-switcher nb-icon {
+  color: #000102;
+}

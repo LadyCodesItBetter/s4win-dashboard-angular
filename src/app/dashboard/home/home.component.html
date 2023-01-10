@@ -1,0 +1,66 @@
+<div class="row">
+  <nb-card>
+    <nb-card-header>Bikes</nb-card-header>
+    <nb-card-body>
+      <div class="row">
+        <div class="col-md-7">
+          <ngx-gauge
+            [option]="bikesChartOption"
+            [data]="bikeChartData"
+          ></ngx-gauge>
+        </div>
+        <div class="col-md-5 pt-5">
+          <ngx-tree-grid
+            [columns]="bikeColumns"
+            [data]="bikeTableData"
+            (clickedRow)="goToTransactionPage($event)"
+          ></ngx-tree-grid>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
+<div class="row">
+  <nb-card>
+    <nb-card-header>Frames / Kitframe</nb-card-header>
+    <nb-card-body>
+      <div class="row">
+        <div class="col-md-7">
+          <ngx-gauge
+            [option]="framesChartOption"
+            [data]="frameChartData"
+          ></ngx-gauge>
+        </div>
+        <div class="col-md-5 pt-5">
+          <ngx-tree-grid
+            [columns]="frameColumns"
+            [data]="frameTableData"
+            (clickedRow)="goToTransactionPage($event)"
+          ></ngx-tree-grid>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
+<div class="row">
+  <nb-card>
+    <nb-card-header>NFTs</nb-card-header>
+    <nb-card-body>
+      <div class="row">
+        <div class="col-md-7">
+          <ngx-gauge
+            [option]="framesChartOption"
+            [data]="nftChartData"
+          ></ngx-gauge>
+        </div>
+        <div class="col-md-5 pt-5">
+          <ngx-tree-grid
+            [columns]="nftColumns"
+            [data]="nftTableData"
+            (clickedRow)="goToTransactionPage($event)"
+          ></ngx-tree-grid>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>

@@ -1,0 +1,39 @@
+<div class="form-inline">
+  <nb-icon class="flex-grow-0 mr-3" icon="calendar-outline"></nb-icon>
+
+  <p class="flex-grow-0 mr-3">From:</p>
+  <input nbInput
+         fullWidth
+         placeholder="Date from"
+         class="mr-3"
+         [nbDatepicker]="datePickerFrom"
+         [(ngModel)]="dateFrom"
+         (ngModelChange)="onDateFromChanged($event)"
+         [disabled]="!dateEnabled">
+  <nb-datepicker #datePickerFrom></nb-datepicker>
+
+  <p class="flex-grow-0 mr-3">to:</p>
+  <input nbInput
+         fullWidth
+         placeholder="Date to"
+         class="mr-3"
+         [nbDatepicker]="datePickerTo"
+         [(ngModel)]="dateTo"
+         (ngModelChange)="onDateToChanged($event)"
+         [disabled]="!dateEnabled"
+  >
+  <nb-datepicker #datePickerTo></nb-datepicker>
+
+  <nb-toggle status="basic" (click)="setNoDate()">No date</nb-toggle>
+
+  <nb-select *ngIf="selectValues" class="mr-3" placeholder="All types" (selectedChange)="onSelectChange($event)" [multiple]="true">
+    <nb-option [value]="">All</nb-option>
+    <nb-option
+      *ngFor="let productType of selectValues"
+      value="{{ productType }}"
+      placeholder="Select product type"
+    > {{ productType | ngxCapitalize}}</nb-option>
+  </nb-select>
+
+  <button nbButton *ngIf="buttonVisible" status="primary" (click)="onSearchStart(true)">Search</button>
+</div>

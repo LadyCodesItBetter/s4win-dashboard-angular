@@ -1,0 +1,11 @@
+<nb-card>
+  <nb-card-header>NTFs</nb-card-header>
+
+  <nb-card-body>
+    <ngx-smart-table
+      [settings]="settings"
+      [endpoint]="endpoint"
+      (userRowClick)="onRowClicked($event)"
+    ></ngx-smart-table>
+  </nb-card-body>
+</nb-card>

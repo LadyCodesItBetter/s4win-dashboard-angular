@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-lg-6">
+    <nb-card size="medium">
+      <nb-card-header>Home page settings</nb-card-header>
+      <nb-card-body>
+        <div class="row m-2">
+          <p>Set the maximum number of table's rows in <strong>home page</strong>.</p>
+        </div>
+        <div class="row m-2">
+          <p class="mt-sm-2 float-right">Number of table rows</p>
+          <input type="number" nbInput fullWidth status="basic" [(ngModel)]="selectedMaxNumbOfRowHome" placeholder="Max rows per page">
+        </div>
+
+        <div class="row m-2">
+          <p class="mt-4">Set the default date range filter</p>
+        </div>
+        <div class="row m-2">
+          <nb-radio-group [(ngModel)]="selectedOptionHome" name="optionHome">
+            <nb-radio value="hours" class="inline">hours</nb-radio>
+            <nb-radio value="days" class="inline">days</nb-radio>
+            <nb-radio value="months" class="inline">months</nb-radio>
+          </nb-radio-group>
+        </div>
+
+        <div class="row m-2">
+          <input type="number" [(ngModel)]="defaultDateRangeHome" class="mt-2 mr-2" nbInput status="basic" placeholder="Date range filter">
+          <p class="mb-0 mt-3"><strong>{{selectedOptionHome}}</strong> before now</p>
+        </div>
+
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-lg-6">
+    <nb-card size="medium">
+      <nb-card-header>All pages settings</nb-card-header>
+      <nb-card-body>
+        <div class="row m-2">
+          <p>Set the maximum number of table's rows in <strong>all other pages</strong>.</p>
+        </div>
+        <div class="row m-2">
+          <p class="mt-2">Number of table rows</p>
+          <input type="number" nbInput fullWidth status="basic" [(ngModel)]="selectedMaxNumbOfRowOther" placeholder="Max rows per page">
+        </div>
+
+        <div class="row m-2">
+          <p class="mt-4">Set the default date range filter</p>
+        </div>
+        <div class="row m-2">
+          <nb-radio-group [(ngModel)]="selectedOptionOther" name="optionOthers">
+            <nb-radio value="hours" class="inline">hours</nb-radio>
+            <nb-radio value="days" class="inline">days</nb-radio>
+            <nb-radio value="months" class="inline">months</nb-radio>
+          </nb-radio-group>
+        </div>
+
+        <div class="row m-2">
+          <input type="number" [(ngModel)]="defaultDateRangeOther" class="mt-2 mr-2" nbInput status="basic" placeholder="Date range filter">
+          <p class="mb-0 mt-3"><strong>{{selectedOptionOther}}</strong> before now</p>
+        </div>
+
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-12">
+    <button nbButton status="primary" (click)="saveSettings()" [disabled]="disabledButton">Save</button>
+  </div>
+
+</div>
